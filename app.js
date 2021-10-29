@@ -3,7 +3,11 @@ const http = require('http');
 const server = http.createServer((req, res) => {
     res.status = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World!')
+
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    res.end(time)
 });
 
 server.listen(5500, () => {
